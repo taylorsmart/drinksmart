@@ -1,32 +1,52 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import {ProgressBar, Row, Col, Button} from 'react-bootstrap';
 
+
+// TAYLOR -- this is a new hook from online. It should be
+//    separated into a new file. Also I think I've broken the 
+//    thing that switches between ingredients.
+//    See: https://blog.bitsrc.io/polling-in-react-using-the-useinterval-custom-hook-e2bcefda4197
+export function useInterval(callback, delay) {
+	const savedCallback = useRef();
+	// store the callback
+	useEffect(() => {
+		savedCallback.current = callback;
+	}, [callback])
+
+	// set up the interval
+	useEffect(() => {
+		function tick() {
+			savedCallback.current();
+		}
+		if (delay !== null) {
+			const id = setInterval(tick, delay);
+			return () => {
+				clearInterval(id);
+			};
+		}
+	}, [callback, delay]);
+}
 
 const Ingredient = ({name, weightExpected, event, next, handleNextToggle}) => {
   const [weight, setWeight] = useState(0)
   const [weightCheckFlag, setWeightCheckFlag] = useState(0)
 
-  const startWeightQuery = () => {
-    if(next === event ) {
-      setWeight(weight + 15) //this is for illustrative purposes
-    }
-    // setWeightCheckFlag(); // this should automatically trigger the useEffectBelow to re-fetch weight from the server
-  }
-  setTimeout(function(){startWeightQuery() }, 300);
+  useInterval(async () => {
+	  axios.get('/scaleData')
+		  .then((res) => {
+			  //console.log('weight response', res.data.scaleValue);
+			  if (next) {
+			    setWeight(res.data.scaleValue);
+			  }
+		  })
+		  .catch((error) => {
+			  console.log(error);
+		  });
+  }, 100);
+
 
   const percentageFilled = weight/weightExpected;
-
-
-  useEffect(() => {
-    axios.get('/scaleData')
-      .then((res) => {
-      setWeight(res.data.scaleValue) // This will shift to 'res'
-    })
-    .catch((error) => {
-      console.log(error)
-    });
-  },[weightCheckFlag])
 
   return (
       <Row xs={12} md={12} lg={12} className="showGrid">

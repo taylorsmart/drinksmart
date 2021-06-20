@@ -16,7 +16,7 @@ const RecipePage = ({recipe, handleRecipeClick}) => {
 
   return (
     <Container>
-      {recipeIngredients.map((ingredient, i) => (<Ingredient name={ingredient} weightExpected={recipe[ingredient]} key={`i${i}`} handleNextToggle={handleNextToggle} next={next} event={i} />))}
+      {recipeIngredients.map((ingredient, i) => (<Ingredient name={ingredient} weightExpected={recipe[ingredient]} key={`i${i}`} handleNextToggle={handleNextToggle} next={next == i} event={i} />))}
       <Button onClick={()=>{handleRecipeClick(-1)}}>Back to Drinks</Button>
     </Container>
   )
