@@ -12,7 +12,7 @@
 #define FILTER_SAMPLES         3    // Number of samples to use in moving average of samples.  This is a simple low pass
                                     // filter that helps reduce noise from the bridge & amplifier.
 
-#define SAMPLE_PERIOD_MS       250  // How long to wait between measurements.
+#define SAMPLE_PERIOD_MS       100  // How long to wait between measurements.
 
 #define ZERO_OFFSET            111.07  // Zero offset value found from the calibration sketch.
 
@@ -63,14 +63,14 @@ float filterSample(float newSample) {
 
 void loop(void) 
 {
-  // Check for a request to read the sample from the serial port.
-  if (Serial.available() > 0) {
-    char command = Serial.read();
-    if (command == '?') {
-      // Respond with last sample weight when '?' character is received.
-      Serial.println(sample * GRAMS_PER_MEASUREMENT);
-    }
-  }
+//  // Check for a request to read the sample from the serial port.
+//  if (Serial.available() > 0) {
+//    char command = Serial.read();
+//    if (command == '?') {
+//      // Respond with last sample weight when '?' character is received.
+//      Serial.println(sample * GRAMS_PER_MEASUREMENT);
+//    }
+//  }
   
   // Update the sample every sample period.
   unsigned long time = millis();
@@ -78,6 +78,7 @@ void loop(void)
     sample = filterSample(readADC(ADC_PIN)) - ZERO_OFFSET;
     sample = sample < 0.0 ? 0.0 : sample;
     lastMeasure = time;
+    Serial.println(sample * GRAMS_PER_MEASUREMENT);
   }
   
   // Loop continuously without delay so requests on the serial port are responsive.
