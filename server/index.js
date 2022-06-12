@@ -8,7 +8,12 @@ const cors = require('cors');
 var serialValue = 10.0;
 const SerialPort = require('serialport');
 const Readline = require('@serialport/parser-readline');
-const port = new SerialPort('COM3', { baudRate: 9600 });
+// const port = new SerialPort('COM3', { baudRate: 9600 });
+const port = new SerialPort('/dev/ttyACM0', { baudRate: 9600 }, (err)=> {
+	if (err) {
+	  console.log('unable to open serial port.\n' + err);
+	}
+   });
 const parser = port.pipe(new Readline({ delimiter: '\n' }));
 
 port.on('open', ()=> {
@@ -17,9 +22,12 @@ port.on('open', ()=> {
 parser.on('data', data=> {
 	// TAYLOR -- Add error handling in case it doesn't return a float for some reason.
 	serialValue = parseFloat(data);
+	if (isNaN(serialValue)) {
+		console.log('serial returned '+data+' which is NaN');
+		serialValue = -1.;
+	}
 	console.log('got word from arduino: ', serialValue);
 });
-
 
 // Middleware Execution
 app.use(express.json());
@@ -42,4 +50,3 @@ app.get('/scaleData', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening at localhost:${PORT}!`);
 });
-
