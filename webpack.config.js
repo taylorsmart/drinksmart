@@ -1,4 +1,5 @@
 var path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
 
@@ -7,7 +8,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     filename: 'bundle.js',
-    path: DIST_DIR
+    path: DIST_DIR,
   },
   module: {
     rules: [
@@ -39,5 +40,10 @@ module.exports = {
         ]
       } 
     ],
-  }
+  },
+  plugins: [
+	  new HtmlWebpackPlugin({
+		  template: `${SRC_DIR}/index.html`
+	  })
+  ]
 };
