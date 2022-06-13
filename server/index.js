@@ -2,7 +2,35 @@
 const express = require('express');
 
 const app = express();
-const cors = require('cors');
+const cors = require('cors'),
+	ip = require('ip');
+
+var i2c = require('i2c-bus'),
+	font = require('oled-font-5x7'),
+	i2cBus = i2c.openSync(1),
+	oled = require('oled-i2c-bus');
+var oled_opts = {
+	width: 128,
+	height: 64,
+	address: 0x3c
+};
+var display = new oled(i2cBus, oled_opts);
+display.clearDisplay();
+display.setCursor(20, 6);
+display.writeString(font, 1, 'Welcome to the ');
+display.setCursor(36, 16);
+display.writeString(font, 1, 'KenTTiki');
+display.setCursor(20, 24);
+display.writeString(font, 1, 'Bar and Lounge');
+
+display.setCursor(2, 40);
+display.writeString(font, 1, 'Please visit:  http:// ');
+display.setCursor(2, 48);
+ip_addr = ip.address();
+display.writeString(font, 1, ip_addr + ':3000');
+display.setCursor(2, 55);
+display.writeString(font, 1, 'for the drinks menu.');
+
 
 // Getting Serial Value
 var serialValue = 10.0;
