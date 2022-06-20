@@ -121,6 +121,7 @@ const drinkMenu = [
             'Grendadine': .5 * ts_in_g,
             'Bourbon': 1.5 * oz_in_g,
             'Angostura Bitters': 1,
+            
         }
           
      {
@@ -134,6 +135,39 @@ const drinkMenu = [
             'Seltzer': 3 * oz_in_g,
             'Blended Aged Rum #3': 1 * oz_in_g,
             'Black Blended Rum #5': 1 * oz_in_g,
+        }
+         
+     {
+        name: 'Captain\'s Grog',
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Garnish with mint sprig. Add all ingredients to a drink mixer tin. Fill with 12 oz. crushed ice and 4-6 small "agitator" cubes. Flash lend and open pour with gated finish into a double old-fashioned glass. Add garnish. ',
+        recipe: {
+            'Fresh Lime Juice': .5 * oz_in_g,
+            'Fresh Grapefruit Juice': .5 * oz_in_g,
+            'Grade A Maple Syryup': .5 * oz_in_g,
+            'Seltzer': 1 * oz_in_g,
+            'Velvet Falernum': .5 * oz_in_g,
+            'Pierre Furand Dry Curacao': .5 * oz_in_g,
+            'Vanilla Extract -- 3 drops': .1,
+            'Almond Extract -- 3 drops': .1,
+            'Blended Aged Rum #3': .75 * oz_in_g,
+            'Black Blended Rum #5': .75 * oz_in_g,
+            'Blended Lightly Aged Rum #2': .75 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g,
+        }
+     {
+        name: 'Tiki Bowl,
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Garnish with edible orchid. Combine all ingredients in a drink mixer tin. Fill with 18 oz crushed ice and 4-6 small "agitator" cubes. Flash blend and open pour with gated finish into a tiki bowl for two and float garnish in bowl. ',
+        recipe: {
+            'Fresh Orange Juice': 1.5 * oz_in_g,
+            'Fresh Lime Juice': .75 * oz_in_g,
+            'Honey Syryup p.325 SC': 1 * oz_in_g,
+            'Black Blended Rum #5': 1.25 * oz_in_g,
+            'Black Blended Overproofed Rum #6': 1 * oz_in_g,
+            'Column Still Aged Rum #4': 1 * oz_in_g,
+            'Herbestura (2 dashes)': 2,
+            'Crushed Ice': 12 * oz_in_g,
         }
   ]
 
