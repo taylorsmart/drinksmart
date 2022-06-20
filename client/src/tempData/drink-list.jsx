@@ -1,4 +1,5 @@
 const oz_in_g = 29.6;
+const ts_in_g = 5;  //teaspoon
 
 const drinkMenu = [
 //     {
@@ -37,8 +38,102 @@ const drinkMenu = [
         recipe: {
             'Fresh Lime Juice': 1 * oz_in_g,
             'Demerara Syrup': 1 * oz_in_g,
-            'Blended Aged Rum - Barbados': 2 * oz_in_g,
+            'Blended Aged Rum - Barbados #3': 2 * oz_in_g,
+            'Angostura Bitters': 1, //this is mL 1mL ~= 1g
+        }
+     {
+        name: 'Hurricane',
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Combine all ingredients in a drink mixer tin, fill with 12 oz of crushed ice and 4-6 small "agitator" cubes',
+        recipe: {
+            'Fresh Lemon Juice': 2 * oz_in_g,
+            'SC Passion Fruit Syrup': 2 * oz_in_g,
+            'Black Blended Rum #5': 4 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g,
+        }
+    
+    {
+        name: 'Cosa Nostra #2',
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Garnish with lemon twist and swizzle stick. Add all the ingredients except the ginger ale to a footed pilsner glass. Add cracked or cubed ice. Top with ginger ale and stir very gently to combine, then add garnish.',
+        recipe: {
+            'Fresh Lemon Juice': .75 * oz_in_g,
+            'Amaro Averna': 1.5 * oz_in_g,
+            'Blended Lightly Aged Rum #2': 1 * oz_in_g,
+            'Angostura Bitters': 1, //this is in mL 1mL ~= 1g (actual recipe = 1 dash)
+            'Real Ginger Ale': 2 * oz_in_g,
+        }
+        
+    {
+        name: 'Pinata',
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Garnish with freshly grated nutmeg. Add all the ingredients toa  drink mixer tin. Fill with 12 oz crushed ice and 4-6 small "agitator" cubes. Flash blend and open pour into a hollowed out pineapple. Garnish with freshly grated nutmeg.',
+        recipe: {
+            'Pineapple juice': 3 * oz_in_g,
+            'Fresh Lemon Juice': 1 * oz_in_g,
+            'Demerara Syrup (1/4 oz listed, but can go up to 1/2 oz)': .25 * oz_in_g,
+            'Ginger Liqueur': 1 * oz_in_g,
+            'St. Elizabeth Allspice Dram': .5 * oz_in_g,
+            'Black Blended Rum #5': 1 * oz_in_g,
+            'Blended Lightly Aged Rum #2': 1 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g,
+        }
+        
+     {
+        name: 'Mai Tai',
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Garnish with lime shell and mint sprig. Combine all ingredients with 12 oz of crushed ice and a few cubes in a cocktail shaker. Shake until a frost forms on the shaker and pour the entire contents into a double old-fashioned glass. Garnish with a spent lime shell and mint sprig.',
+        recipe: {
+            'Fresh Lime Juice': .75 * oz_in_g,
+            'Mai Tai Rich Simple Syrup (p.326 SC)': .25 * oz_in_g,
+            'Orgeat Syrup': .25 * oz_in_g,
+            'Ginger Liqueur': 1 * oz_in_g,
+            'Pierre Ferrand Dry Curacao': .5 * oz_in_g,
+            'Blended Aged Rum #3': 2 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g,
+        }
+         
+      {
+        name: 'Don\'s Own Grog',
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Garnish with freshly grated nutmeg. Add all the ingredients toa  drink mixer tin. Fill with 12 oz crushed ice and 4-6 small "agitator" cubes. Flash blend and open pour into a hollowed out pineapple. Garnish with freshly grated nutmeg.',
+        recipe: {
+            'Fresh Lime Juice': .75 * oz_in_g,
+            'Demerara Syrup': .25 * oz_in_g,
+            'Grenadine': 1, //dash = 1mL
+            'Blackberry Liqueur': .5 * oz_in_g,
+            'Blended Lightly Aged Rum #2': .5 * oz_in_g,
+            'Blended Aged Rum #3': 1 * oz_in_g,
+            'Black Blended Rum #5': 1 * oz_in_g,
             'Angostura Bitters': 1,
+            'Crushed Ice': 12 * oz_in_g,
+        }
+          
+      {
+        name: 'Halekulani Cocktail',
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Garnish with edible orchid. Combine all ingredients in a cocktail shaker with cracked or cubed ice. Shake and double-strain into a chilled coupe and garnish with an edible orchid on the edge of the glass.',
+        recipe: {
+            'Fresh Lemon Juice': .5 * oz_in_g,
+            'Fresh Orange Juice': .5 * oz_in_g,
+            'Pineapple Juice': .5 * oz_in_g,
+            'Demerara Syrup': .25 * oz_in_g,
+            'Grendadine': .5 * ts_in_g,
+            'Bourbon': 1.5 * oz_in_g,
+            'Angostura Bitters': 1,
+        }
+          
+     {
+        name: 'Sidewinder\'s Fang',
+        image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
+        description: 'Garnish with mint sprig. Line a snifter with orange peel shaped like a snake. Fill glass with cracked or cubed ice. Put the remaining ingredients in a drink mixer tin with 12 oz. crushed ice and 4-6 small "agitator" cubes. Flash blend then strain into the snifter. Garnish with a mint sprig.',
+        recipe: {
+            'Fresh Lime Juice': 1.5 * oz_in_g,
+            'Fresh Orange Juice': 1.5 * oz_in_g,
+            'Passion Fruit Syrup': 1.5 * oz_in_g,
+            'Seltzer': 3 * oz_in_g,
+            'Blended Aged Rum #3': 1 * oz_in_g,
+            'Black Blended Rum #5': 1 * oz_in_g,
         }
   ]
 
