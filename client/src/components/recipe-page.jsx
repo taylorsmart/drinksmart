@@ -22,9 +22,10 @@ const RecipePage = ({recipe, handleRecipeClick}) => {
 		  console.log(error);
 	  });
   }
+  
 
-
-
+  handleTareScale();  // Do this when entering a recipe.
+ 
   return (
     <Container>
       {recipeIngredients.map((ingredient, i) => (<Ingredient name={ingredient} weightExpected={recipe[ingredient]} key={`i${i}`} handleNextToggle={handleNextToggle} next={next == i} event={i} tareWeight={tareWeight}/>))}
