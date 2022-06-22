@@ -39,8 +39,9 @@ const drinkMenu = [
             'Fresh Lime Juice': 1 * oz_in_g,
             'Demerara Syrup': 1 * oz_in_g,
             'Blended Aged Rum - Barbados #3': 2 * oz_in_g,
-            'Angostura Bitters': 1, //this is mL 1mL ~= 1g
+            'Angostura Bitters': 1 //this is mL 1mL ~= 1g
         }
+     },
      {
         name: 'Hurricane',
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -49,9 +50,9 @@ const drinkMenu = [
             'Fresh Lemon Juice': 2 * oz_in_g,
             'SC Passion Fruit Syrup': 2 * oz_in_g,
             'Black Blended Rum #5': 4 * oz_in_g,
-            'Crushed Ice': 12 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g
         }
-    
+     },
     {
         name: 'Cosa Nostra #2',
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -61,9 +62,9 @@ const drinkMenu = [
             'Amaro Averna': 1.5 * oz_in_g,
             'Blended Lightly Aged Rum #2': 1 * oz_in_g,
             'Angostura Bitters': 1, //this is in mL 1mL ~= 1g (actual recipe = 1 dash)
-            'Real Ginger Ale': 2 * oz_in_g,
+            'Real Ginger Ale': 2 * oz_in_g
         }
-        
+    },
     {
         name: 'Pinata',
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -76,9 +77,9 @@ const drinkMenu = [
             'St. Elizabeth Allspice Dram': .5 * oz_in_g,
             'Black Blended Rum #5': 1 * oz_in_g,
             'Blended Lightly Aged Rum #2': 1 * oz_in_g,
-            'Crushed Ice': 12 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g
         }
-        
+     },
      {
         name: 'Mai Tai',
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -90,9 +91,9 @@ const drinkMenu = [
             'Ginger Liqueur': 1 * oz_in_g,
             'Pierre Ferrand Dry Curacao': .5 * oz_in_g,
             'Blended Aged Rum #3': 2 * oz_in_g,
-            'Crushed Ice': 12 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g
         }
-         
+      },
       {
         name: 'Don\'s Own Grog',
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -106,9 +107,9 @@ const drinkMenu = [
             'Blended Aged Rum #3': 1 * oz_in_g,
             'Black Blended Rum #5': 1 * oz_in_g,
             'Angostura Bitters': 1,
-            'Crushed Ice': 12 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g
         }
-          
+      }, 
       {
         name: 'Halekulani Cocktail',
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -120,10 +121,10 @@ const drinkMenu = [
             'Demerara Syrup': .25 * oz_in_g,
             'Grendadine': .5 * ts_in_g,
             'Bourbon': 1.5 * oz_in_g,
-            'Angostura Bitters': 1,
+            'Angostura Bitters': 1
             
         }
-          
+     }, 
      {
         name: 'Sidewinder\'s Fang',
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -134,9 +135,9 @@ const drinkMenu = [
             'Passion Fruit Syrup': 1.5 * oz_in_g,
             'Seltzer': 3 * oz_in_g,
             'Blended Aged Rum #3': 1 * oz_in_g,
-            'Black Blended Rum #5': 1 * oz_in_g,
+            'Black Blended Rum #5': 1 * oz_in_g
         }
-         
+     }, 
      {
         name: 'Captain\'s Grog',
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -153,8 +154,9 @@ const drinkMenu = [
             'Blended Aged Rum #3': .75 * oz_in_g,
             'Black Blended Rum #5': .75 * oz_in_g,
             'Blended Lightly Aged Rum #2': .75 * oz_in_g,
-            'Crushed Ice': 12 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g
         }
+     },
      {
         name: 'Tiki Bowl,
         image: 'https://augustine-bar.de/wp-content/uploads/Muertos-Y-Furiosos.png',
@@ -167,8 +169,9 @@ const drinkMenu = [
             'Black Blended Overproofed Rum #6': 1 * oz_in_g,
             'Column Still Aged Rum #4': 1 * oz_in_g,
             'Herbestura (2 dashes)': 2,
-            'Crushed Ice': 12 * oz_in_g,
+            'Crushed Ice': 12 * oz_in_g
         }
+    }
   ]
 
 export default drinkMenu
