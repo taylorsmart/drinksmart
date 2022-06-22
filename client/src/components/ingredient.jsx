@@ -28,7 +28,7 @@ export function useInterval(callback, delay) {
 	}, [callback, delay]);
 }
 
-const Ingredient = ({name, weightExpected, event, next, handleNextToggle}) => {
+const Ingredient = ({name, weightExpected, event, next, handleNextToggle, tareWeight}) => {
   const [weight, setWeight] = useState(0)
   const [weightCheckFlag, setWeightCheckFlag] = useState(0)
 
@@ -37,7 +37,7 @@ const Ingredient = ({name, weightExpected, event, next, handleNextToggle}) => {
 		  .then((res) => {
 			  //console.log('weight response', res.data.scaleValue);
 			  if (next) {
-			    setWeight(res.data.scaleValue);
+			    setWeight(res.data.scaleValue - tareWeight);
 			  }
 		  })
 		  .catch((error) => {
@@ -57,7 +57,7 @@ const Ingredient = ({name, weightExpected, event, next, handleNextToggle}) => {
           <ProgressBar now={percentageFilled} />
         </Col>
         <Col xs={2}>
-          <span>{weight} / {weightExpected}</span><Button onClick={handleNextToggle}>Next</Button>
+          <span>{weight.toFixed(2)} / {weightExpected.toFixed(1)}</span><Button onClick={handleNextToggle}>Next</Button>
         </Col>
       </Row>
   )
