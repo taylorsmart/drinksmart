@@ -46,7 +46,7 @@ const Ingredient = ({name, weightExpected, event, next, handleNextToggle}) => {
   }, 100);
 
 
-  const percentageFilled = weight/weightExpected;
+  const percentageFilled = 100 * weight/weightExpected;
 
   return (
       <Row xs={12} md={12} lg={12} className="showGrid">
@@ -57,7 +57,7 @@ const Ingredient = ({name, weightExpected, event, next, handleNextToggle}) => {
           <ProgressBar now={percentageFilled} />
         </Col>
         <Col xs={2}>
-          <Button onClick={handleNextToggle}>Next</Button>
+          <span>{weight} / {weightExpected}</span><Button onClick={handleNextToggle}>Next</Button>
         </Col>
       </Row>
   )
