@@ -6,17 +6,30 @@ import {Container, Button} from 'react-bootstrap';
 
 const RecipePage = ({recipe, handleRecipeClick}) => {
   const [next, setNext] = useState(0)
+  const [tareWeight, setTareWeight] = useState(0)
   const recipeIngredients = Object.keys(recipe); 
 
   const handleNextToggle = () => {
-    setNext(next+ 1)
+    setNext(next+ 1);
+    handleTareScale();
   }
 
+  const handleTareScale = () => {
+    axios.get('/scaleData')
+	  .then((res) => {
+		  setTareWeight(res.data.scaleValue);
+	  }).catch((error) => {
+		  console.log(error);
+	  });
+  }
+  
 
-
+  handleTareScale();  // Do this when entering a recipe.
+ 
   return (
     <Container>
-      {recipeIngredients.map((ingredient, i) => (<Ingredient name={ingredient} weightExpected={recipe[ingredient]} key={`i${i}`} handleNextToggle={handleNextToggle} next={next == i} event={i} />))}
+      {recipeIngredients.map((ingredient, i) => (<Ingredient name={ingredient} weightExpected={recipe[ingredient]} key={`i${i}`} handleNextToggle={handleNextToggle} next={next == i} event={i} tareWeight={tareWeight}/>))}
+      <Button onClick={()=>{handleTareScale()}} style={{marginRight: 5+'px'}}>Tare</Button>
       <Button onClick={()=>{handleRecipeClick(-1)}}>Back to Drinks</Button>
     </Container>
   )
